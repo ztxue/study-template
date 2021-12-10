@@ -1,0 +1,95 @@
+15:16:47.371 [main] INFO  com.example.demo1210.Demo1210Application - Starting Demo1210Application on DESKTOP-HJ6UGVV with PID 16268 (D:\IdeaProjects\Demo1210\target\classes started by ztxue in D:\IdeaProjects\Demo1210)
+15:16:47.382 [main] INFO  com.example.demo1210.Demo1210Application - No active profile set, falling back to default profiles: default
+15:16:47.825 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:16:47.825 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+15:16:47.825 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+15:16:47.866 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:16:48.067 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+15:16:48.377 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:16:48.419 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+15:16:48.429 [main] INFO  com.example.demo1210.Demo1210Application - Started Demo1210Application in 1.307 seconds (JVM running for 2.214)
+15:16:48.440 [main] INFO  com.example.demo1210.Demo1210Application - ==============》启动完成：8080
+15:24:50.177 [main] INFO  com.example.demo1210.Demo1210ApplicationTests - Starting Demo1210ApplicationTests on DESKTOP-HJ6UGVV with PID 13956 (started by ztxue in D:\IdeaProjects\Demo1210)
+15:24:50.177 [main] INFO  com.example.demo1210.Demo1210ApplicationTests - No active profile set, falling back to default profiles: default
+15:24:51.305 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+15:24:51.788 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:24:51.880 [main] INFO  com.example.demo1210.Demo1210ApplicationTests - Started Demo1210ApplicationTests in 1.899 seconds (JVM running for 3.107)
+15:24:52.078 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+15:30:53.180 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Starting SpringbootMybatisPlus01ApplicationTests on DESKTOP-HJ6UGVV with PID 6816 (started by ztxue in D:\IdeaProjects\Demo1210)
+15:30:53.190 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - No active profile set, falling back to default profiles: default
+15:30:54.379 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+15:30:54.839 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:30:55.321 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Started SpringbootMybatisPlus01ApplicationTests in 2.327 seconds (JVM running for 3.55)
+15:30:55.538 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+15:31:50.055 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Starting SpringbootMybatisPlus01ApplicationTests on DESKTOP-HJ6UGVV with PID 10824 (started by ztxue in D:\IdeaProjects\Demo1210)
+15:31:50.055 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - No active profile set, falling back to default profiles: default
+15:31:51.186 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+15:31:51.705 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:31:52.156 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Started SpringbootMybatisPlus01ApplicationTests in 2.294 seconds (JVM running for 3.47)
+15:31:52.444 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+15:32:51.186 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Starting SpringbootMybatisPlus01ApplicationTests on DESKTOP-HJ6UGVV with PID 5724 (started by ztxue in D:\IdeaProjects\Demo1210)
+15:32:51.197 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - No active profile set, falling back to default profiles: default
+15:32:52.358 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+15:32:52.818 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:32:53.237 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Started SpringbootMybatisPlus01ApplicationTests in 2.233 seconds (JVM running for 3.392)
+15:32:53.491 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+15:34:06.707 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Starting SpringbootMybatisPlus01ApplicationTests on DESKTOP-HJ6UGVV with PID 16748 (started by ztxue in D:\IdeaProjects\Demo1210)
+15:34:06.708 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - No active profile set, falling back to default profiles: default
+15:34:07.839 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+15:34:08.349 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:34:08.766 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Started SpringbootMybatisPlus01ApplicationTests in 2.259 seconds (JVM running for 3.742)
+15:34:09.061 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+15:34:49.858 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Starting SpringbootMybatisPlus01ApplicationTests on DESKTOP-HJ6UGVV with PID 2276 (started by ztxue in D:\IdeaProjects\Demo1210)
+15:34:49.858 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - No active profile set, falling back to default profiles: default
+15:34:51.006 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+15:34:51.535 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:34:51.935 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Started SpringbootMybatisPlus01ApplicationTests in 2.273 seconds (JVM running for 3.437)
+15:34:52.230 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+15:35:31.217 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Starting SpringbootMybatisPlus01ApplicationTests on DESKTOP-HJ6UGVV with PID 15216 (started by ztxue in D:\IdeaProjects\Demo1210)
+15:35:31.220 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - No active profile set, falling back to default profiles: default
+15:35:32.428 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+15:35:32.905 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:35:33.329 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Started SpringbootMybatisPlus01ApplicationTests in 2.34 seconds (JVM running for 4.374)
+15:35:33.633 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+15:36:31.072 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Starting SpringbootMybatisPlus01ApplicationTests on DESKTOP-HJ6UGVV with PID 16812 (started by ztxue in D:\IdeaProjects\Demo1210)
+15:36:31.083 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - No active profile set, falling back to default profiles: default
+15:36:32.189 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+15:36:32.657 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:36:33.070 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Started SpringbootMybatisPlus01ApplicationTests in 2.178 seconds (JVM running for 3.356)
+15:36:33.340 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+15:37:07.622 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Starting SpringbootMybatisPlus01ApplicationTests on DESKTOP-HJ6UGVV with PID 4568 (started by ztxue in D:\IdeaProjects\Demo1210)
+15:37:07.632 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - No active profile set, falling back to default profiles: default
+15:37:08.820 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+15:37:09.346 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:37:09.738 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Started SpringbootMybatisPlus01ApplicationTests in 2.294 seconds (JVM running for 3.508)
+15:37:10.041 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+15:37:22.183 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Starting SpringbootMybatisPlus01ApplicationTests on DESKTOP-HJ6UGVV with PID 4704 (started by ztxue in D:\IdeaProjects\Demo1210)
+15:37:22.183 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - No active profile set, falling back to default profiles: default
+15:37:23.341 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+15:37:23.858 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:37:24.268 [main] INFO  com.example.demo1210.SpringbootMybatisPlus01ApplicationTests - Started SpringbootMybatisPlus01ApplicationTests in 2.279 seconds (JVM running for 3.478)
+15:37:24.593 [main] WARN  com.baomidou.mybatisplus.generator.IDatabaseQuery$DefaultDatabaseQuery - 当前表[tb_dept]的主键为自增主键，会导致全局主键的ID类型设置失效!
+15:37:24.615 [main] WARN  com.baomidou.mybatisplus.generator.IDatabaseQuery$DefaultDatabaseQuery - 当前表[tb_staff]的主键为自增主键，会导致全局主键的ID类型设置失效!
+15:37:24.874 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+15:40:47.944 [main] INFO  com.example.demo1210.Demo1210Application - Starting Demo1210Application on DESKTOP-HJ6UGVV with PID 14096 (D:\IdeaProjects\Demo1210\target\classes started by ztxue in D:\IdeaProjects\Demo1210)
+15:40:47.944 [main] INFO  com.example.demo1210.Demo1210Application - No active profile set, falling back to default profiles: default
+15:40:48.579 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:40:48.579 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+15:40:48.579 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+15:40:48.620 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:40:48.713 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+15:40:49.032 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+15:40:49.748 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+15:40:49.769 [main] INFO  com.example.demo1210.Demo1210Application - Started Demo1210Application in 2.074 seconds (JVM running for 2.87)
+15:40:49.769 [main] INFO  com.example.demo1210.Demo1210Application - ==============》启动完成：8080
+15:40:54.218 [http-nio-8080-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:45:44.440 [main] INFO  com.example.demo1210.Demo1210Application - Starting Demo1210Application on DESKTOP-HJ6UGVV with PID 7420 (D:\IdeaProjects\Demo1210\target\classes started by ztxue in D:\IdeaProjects\Demo1210)
+15:45:44.445 [main] INFO  com.example.demo1210.Demo1210Application - No active profile set, falling back to default profiles: default
+15:45:45.102 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:45:45.102 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+15:45:45.102 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+15:45:45.153 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:45:46.027 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+15:45:46.040 [main] INFO  com.example.demo1210.Demo1210Application - Started Demo1210Application in 1.872 seconds (JVM running for 2.625)
+15:45:46.041 [main] INFO  com.example.demo1210.Demo1210Application - ==============》启动完成：8080
+15:45:54.337 [http-nio-8080-exec-4] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'

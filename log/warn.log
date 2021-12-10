@@ -1,0 +1,2 @@
+15:37:24.593 [main] WARN  com.baomidou.mybatisplus.generator.IDatabaseQuery$DefaultDatabaseQuery - 当前表[tb_dept]的主键为自增主键，会导致全局主键的ID类型设置失效!
+15:37:24.615 [main] WARN  com.baomidou.mybatisplus.generator.IDatabaseQuery$DefaultDatabaseQuery - 当前表[tb_staff]的主键为自增主键，会导致全局主键的ID类型设置失效!
