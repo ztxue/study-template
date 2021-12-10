@@ -2,10 +2,13 @@ package com.example.demo1210.service;
 
 import com.example.demo1210.entity.Dept;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author 张童学
@@ -13,4 +16,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface DeptService extends IService<Dept> {
 
+    List<Dept> deptList();
+    int getOne(@Param("id") int id);
 }

@@ -6,6 +6,8 @@ import com.example.demo1210.service.DeptService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -17,4 +19,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements DeptService {
 
+
+    private final DeptMapper deptMapper;
+
+    public DeptServiceImpl(DeptMapper deptMapper) {
+        this.deptMapper = deptMapper;
+    }
+
+    @Override
+    public List<Dept> deptList() {
+        return deptMapper.deptList();
+    }
+
+    @Override
+    public int getOne(int id) {
+        return deptMapper.getOne(id);
+    }
 }

@@ -17,7 +17,7 @@ import java.util.Map;
 @Configuration
 public class DruidConfig {
 
-    @ConfigurationProperties(prefix = "spring.datasource")
+    @ConfigurationProperties(prefix = "spring.datasource.druid")
     @Bean
     public DataSource druid(){
        return  new DruidDataSource();

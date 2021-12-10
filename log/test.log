@@ -1,10 +1,11 @@
-15:45:44.440 [main] INFO  com.example.demo1210.Demo1210Application - Starting Demo1210Application on DESKTOP-HJ6UGVV with PID 7420 (D:\IdeaProjects\Demo1210\target\classes started by ztxue in D:\IdeaProjects\Demo1210)
-15:45:44.445 [main] INFO  com.example.demo1210.Demo1210Application - No active profile set, falling back to default profiles: default
-15:45:45.102 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-15:45:45.102 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-15:45:45.102 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
-15:45:45.153 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:45:46.027 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-15:45:46.040 [main] INFO  com.example.demo1210.Demo1210Application - Started Demo1210Application in 1.872 seconds (JVM running for 2.625)
-15:45:46.041 [main] INFO  com.example.demo1210.Demo1210Application - ==============》启动完成：8080
-15:45:54.337 [http-nio-8080-exec-4] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:01:04.641 [main] INFO  com.example.demo1210.Demo1210Application - Starting Demo1210Application on DESKTOP-HJ6UGVV with PID 7880 (D:\IdeaProjects\Demo1210\target\classes started by ztxue in D:\IdeaProjects\Demo1210)
+17:01:04.646 [main] INFO  com.example.demo1210.Demo1210Application - No active profile set, falling back to default profiles: default
+17:01:05.301 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+17:01:05.301 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:01:05.302 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+17:01:05.346 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:01:06.227 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+17:01:06.239 [main] INFO  com.example.demo1210.Demo1210Application - Started Demo1210Application in 1.836 seconds (JVM running for 2.613)
+17:01:06.240 [main] INFO  com.example.demo1210.Demo1210Application - ==============》启动完成：8080
+17:01:10.786 [http-nio-8080-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:01:11.120 [http-nio-8080-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
