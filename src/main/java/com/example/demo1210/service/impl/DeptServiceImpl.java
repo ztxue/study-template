@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * <p>
@@ -34,5 +35,10 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements De
     @Override
     public int getOne(int id) {
         return deptMapper.getOne(id);
+    }
+
+    @Override
+    public int selectCountByOrgId(Set<Integer> ids) {
+        return deptMapper.selectCountByOrgId(ids);
     }
 }
