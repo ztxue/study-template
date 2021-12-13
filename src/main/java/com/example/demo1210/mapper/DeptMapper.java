@@ -2,9 +2,7 @@ package com.example.demo1210.mapper;
 
 import com.example.demo1210.entity.Dept;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 import java.util.Set;
@@ -23,22 +21,22 @@ public interface DeptMapper extends BaseMapper<Dept> {
 
     @Select("<script>" +
             "SELECT " +
-            " d.'id',d.'name',d.'levels',d.'user_name',d.'tel'" +
-            " FROM tb_dept d" +
-            "<where>" +
-            " d.'is_deleted'=0" +
-            "</where>" +
+            " id,name,levels,user_name,tel" +
+            " FROM tb_dept" +
+            " <where>" +
+            " is_deleted=0" +
+            " </where>" +
             "</script>")
     List<Dept> deptList();
 
     @Select("<script>" +
             "SELECT " +
-            "d.'id',d.'name',d.'levels',d.'user_name',d.'tel' " +
-            "FROM tb_dept d" +
+            " d.id,d.name,d.levels,d.user_name,d.tel" +
+            " FROM tb_dept d" +
             "<where>" +
             " d.'is_deleted' = 0 " +
             "</where>" +
-            "AND d.'id' = #{id}" +
+            " AND d.id = #{id}" +
             "</script>")
     int getOne(@Param("id") int id);
 
@@ -55,4 +53,35 @@ public interface DeptMapper extends BaseMapper<Dept> {
             "</where>" +
             "</script>")
     int selectCountByOrgId(@Param("ids") Set<Integer> ids);
+
+    @Delete("<script>" +
+            " delete" +
+            " from tb_dept" +
+            " <where>" +
+            " tb_dept.is_deleted=0" +
+            " <if test=\"name!=null and name!=''\">" +
+            " AND name = #{name}" +
+            " </if>" +
+            " </where>" +
+            " </script>")
+    int deleteByName(String name);
+
+    @Update("<script>" +
+            " update tb_dept" +
+            " set tel=#{tel}" +
+            " <where>" +
+            " is_deleted=0" +
+            " AND tel!=null and tel!=''" +
+            " </where>" +
+            " </script>")
+    int updateTelByName(@Param("tel") String tel);
+
+    @Insert("<script>" +
+            " insert into " +
+            " tb_dept" +
+            " (name,levels,user_name,tel)" +
+            " value" +
+            " (#{name},#{levels},#{username},#{tel})" +
+            " </script>")
+    int addDept(String name,Integer levels, String username,String tel);
 }

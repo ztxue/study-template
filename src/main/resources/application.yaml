@@ -20,7 +20,10 @@ spring:
         allow: 127.0.0.1                        #\u5141\u8BB8\u90A3\u4E9Bip
         login-username: admin
         login-password: 123456
-
+  aop:
+    auto: true #启动aop配置
 
 logging:
   config: classpath:log4j2.xml
+server:
+  port: 8011

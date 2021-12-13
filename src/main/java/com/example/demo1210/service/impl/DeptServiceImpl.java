@@ -41,4 +41,19 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements De
     public int selectCountByOrgId(Set<Integer> ids) {
         return deptMapper.selectCountByOrgId(ids);
     }
+
+    @Override
+    public int deleteByName(String name) {
+        return deptMapper.deleteByName(name);
+    }
+
+    @Override
+    public int updateTelByName( String tel) {
+        return deptMapper.updateTelByName(tel);
+    }
+
+    @Override
+    public int addDept(String name, Integer levels, String username, String tel) {
+        return deptMapper.addDept(name, levels, username, tel);
+    }
 }
