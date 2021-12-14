@@ -1,3 +1,6 @@
+server:
+  port: 8011
+
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -25,7 +28,9 @@ spring:
 
 logging:
   config: classpath:log4j2.xml
-  level.com.example.demo1210.mapper: debug
-debug: true
-server:
-  port: 8011
+  #mybatis-plus配置控制台打印完整带参数SQL语句
+  level:
+    com.example.demo1210.mapper: debug
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
