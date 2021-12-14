@@ -25,5 +25,7 @@ spring:
 
 logging:
   config: classpath:log4j2.xml
+  level.com.example.demo1210.mapper: debug
+debug: true
 server:
   port: 8011

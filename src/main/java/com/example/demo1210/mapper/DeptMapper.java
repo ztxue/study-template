@@ -1,5 +1,6 @@
 package com.example.demo1210.mapper;
 
+import com.example.demo1210.bean.DeptBean;
 import com.example.demo1210.entity.Dept;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.*;
@@ -81,7 +82,7 @@ public interface DeptMapper extends BaseMapper<Dept> {
             " tb_dept" +
             " (name,levels,user_name,tel)" +
             " value" +
-            " (#{name},#{levels},#{username},#{tel})" +
+            " (#{name},#{levels},#{userName},#{tel})" +
             " </script>")
-    int addDept(String name,Integer levels, String username,String tel);
+    int addDept(DeptBean deptBean);
 }

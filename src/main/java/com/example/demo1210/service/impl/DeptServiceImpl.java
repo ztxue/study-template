@@ -1,5 +1,6 @@
 package com.example.demo1210.service.impl;
 
+import com.example.demo1210.bean.DeptBean;
 import com.example.demo1210.entity.Dept;
 import com.example.demo1210.mapper.DeptMapper;
 import com.example.demo1210.service.DeptService;
@@ -53,7 +54,7 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements De
     }
 
     @Override
-    public int addDept(String name, Integer levels, String username, String tel) {
-        return deptMapper.addDept(name, levels, username, tel);
+    public int addDept(DeptBean deptBean) {
+        return deptMapper.addDept(deptBean);
     }
 }

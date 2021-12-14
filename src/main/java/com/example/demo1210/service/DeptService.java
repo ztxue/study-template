@@ -1,5 +1,6 @@
 package com.example.demo1210.service;
 
+import com.example.demo1210.bean.DeptBean;
 import com.example.demo1210.config.LogAnnotation;
 import com.example.demo1210.entity.Dept;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -28,5 +29,5 @@ public interface DeptService extends IService<Dept> {
 
     int updateTelByName(String tel);
 
-    int addDept(String name, Integer levels, String username, String tel);
+    int addDept(DeptBean deptBean);
 }
