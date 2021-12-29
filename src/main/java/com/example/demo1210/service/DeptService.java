@@ -18,8 +18,9 @@ import java.util.Set;
  */
 public interface DeptService extends IService<Dept> {
 
+    List<Dept> selectListPage(DeptBean param);
 
-    Object listP(Map<String,Object> map);
+    Object listP(Map<String, Object> map);
 
     List<Dept> deptList(DeptBean deptBean);
 

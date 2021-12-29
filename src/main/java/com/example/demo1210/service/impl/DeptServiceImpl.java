@@ -35,42 +35,61 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements De
     @Autowired
     DeptMapper deptMapper;
 
+    /**
+     * listPage 自定义的方法
+     */
+    @Override
+    public List<Dept> selectListPage(DeptBean param) {
 
-    //listP
+        if (param == null) {
+            param = new DeptBean();
+        }
+        Integer pageSize = param.getPageSize();
+        Integer currentPage = param.getCurrentPage();
+        if (pageSize == null) {
+            pageSize = 10;
+        }
+        if (currentPage == null) {
+            currentPage = 1;
+        }
+        Page<Dept> page = new Page<>(currentPage, pageSize);
+        IPage<Dept> deptPage = deptMapper.selectListPage(param, page);
+
+        return deptPage.getRecords();
+    }
+
+    //list分页map
     @Override
     public Object listP(Map<String, Object> map) {
         Map<String, Object> resultMap = new HashMap<>();
 
         QueryWrapper<Dept> queryWrapper = new QueryWrapper<>();
         if (!map.isEmpty()) {
-            queryWrapper.like("user_name",map.get("username"));
-            queryWrapper.like("name",map.get("name"));
+            queryWrapper.like("user_name", map.get("username"));
+            queryWrapper.like("name", map.get("name"));
 
         }
-        Integer currentPage = (Integer) map.put("currentPage","currentPage");
-        Integer pageSize = (Integer) map.put("pageSize","pageSize");
+        Integer currentPage = (Integer) map.put("currentPage", "currentPage");
+        Integer pageSize = (Integer) map.put("pageSize", "pageSize");
 
 
-        Page<Map<String,Object>> page = new Page<>(currentPage, pageSize);
-        IPage<Map<String,Object>> iPage = deptMapper.selectMapsPage(page,queryWrapper);
+        Page<Map<String, Object>> page = new Page<>(currentPage, pageSize);
+        IPage<Map<String, Object>> iPage = deptMapper.selectMapsPage(page, queryWrapper);
 
-        resultMap.put("page",iPage.getRecords());
+        resultMap.put("page", iPage.getRecords());
         return resultMap;
     }
 
-    //分页
+    //list分页QueryWrapper
     @Override
     public List<Dept> deptList(DeptBean deptBean) {
 
         QueryWrapper<Dept> wrapper = new QueryWrapper<>();
         if (StringUtils.isNotEmpty(deptBean.getUserName())) {
-            wrapper.eq("user_name", deptBean.getUserName());
+            wrapper.like("user_name", deptBean.getUserName());
         }
         if (StringUtils.isNotEmpty(deptBean.getUserName())) {
-            wrapper.eq("name", deptBean.getName());
-        }
-        if (StringUtils.isNotEmpty(deptBean.getUserName())) {
-            wrapper.eq("tel", deptBean.getLevels());
+            wrapper.like("name", deptBean.getName());
         }
         if (StringUtils.isNotEmpty(deptBean.getUserName())) {
             wrapper.eq("levels", deptBean.getLevels());

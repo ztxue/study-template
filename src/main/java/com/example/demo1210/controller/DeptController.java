@@ -9,6 +9,7 @@ import com.example.demo1210.service.impl.DeptServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,15 +39,27 @@ public class DeptController {
         this.deptServiceimpl = deptServiceimpl;
     }
 
-    @LogAnnotation(title = "分页", tag = "获取分页")
-    @ApiOperation("分页")
+    @LogAnnotation(title = "分页列表DIY", tag = "分页列表")
+    @ApiOperation("分页列表DIY")
+    @PostMapping("/selecLlistPage")
+    public ResultResponseBody<List<Dept>> selectListPage(@RequestBody DeptBean params) {
+        if (params == null){
+            ResultResponseBody.fail(1,"空参");
+        }
+        return ResultResponseBody.ok(deptServiceimpl.selectListPage(params));
+    }
+
+
+    @LogAnnotation(title = "分页列表", tag = "分页列表")
+    @ApiOperation("分页列表")
     @PostMapping("/listPage")
     public ResultResponseBody<List<Dept>> getListPage(@RequestBody DeptBean deptBean) {
+
         return ResultResponseBody.ok(deptServiceimpl.deptList(deptBean));
     }
 
-    @LogAnnotation(title = "列表", tag = "获取列表")
-    @ApiOperation("列表")
+    @LogAnnotation(title = "列表map", tag = "列表map")
+    @ApiOperation("列表map")
     @PostMapping("/list")
     public Object getList(@RequestBody Map<String, Object> param) {
 

@@ -1,12 +1,13 @@
 package com.example.demo1210.mapper;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.demo1210.bean.DeptBean;
 import com.example.demo1210.entity.Dept;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
@@ -31,22 +32,25 @@ public interface DeptMapper extends BaseMapper<Dept> {
             "</script>")
     List<Dept> deptList(@Param("deptBean") DeptBean deptBean);
 
+    /**
+     * listPage
+     */
     @Select("<script>" +
             "SELECT " +
             " id,name,levels,user_name,tel" +
             " FROM tb_dept" +
             " <where>" +
             " is_deleted=0" +
-            " <if test=\"user_name!=null and user_name!='' and user_name!='null'\">" +
-            " AND tb_dept.user_name like CONCAT('%',#{user_name,jdbcType=VARCHAR},'%')" +
+            " <if test=\"param.userName!=null and param.userName!='' and param.userName!='null'\">" +
+            " AND tb_dept.user_name like CONCAT('%',#{param.userName,jdbcType=VARCHAR},'%')" +
             " </if>" +
-            " <if test=\"name!=null and name!='' and name!='null'\">" +
-            " AND tb_dept.name like CONCAT('%',#{name,jdbcType=VARCHAR},'%')" +
+            " <if test=\"param.name!=null and param.name!='' and param.name!='null'\">" +
+            " AND tb_dept.name like CONCAT('%',#{param.name,jdbcType=VARCHAR},'%')" +
             " </if>" +
             " </where>" +
-            " ORDER BY tb_dept.id DESC" +
+            " ORDER BY tb_dept.id" +
             "</script>")
-    List<Map<String, Object>> listP(Map<String, Object> map);
+    IPage<Dept> selectListPage(@Param("param") DeptBean param, @Param("page") Page<Dept> page);
 
     @Select("<script>" +
             "SELECT " +

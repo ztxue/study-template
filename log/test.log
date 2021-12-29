@@ -1,23 +1,62 @@
-11:01:16.910 [main] INFO  com.example.demo1210.Demo1210Application - Starting Demo1210Application on DESKTOP-HJ6UGVV with PID 14208 (D:\IdeaProjects\Demo1210\target\classes started by ztxue in D:\IdeaProjects\Demo1210)
-11:01:16.914 [main] INFO  com.example.demo1210.Demo1210Application - No active profile set, falling back to default profiles: default
-11:01:17.758 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8011"]
-11:01:17.758 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-11:01:17.759 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
-11:01:17.806 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-11:01:19.082 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8011"]
-11:01:19.097 [main] INFO  com.example.demo1210.Demo1210Application - Started Demo1210Application in 2.444 seconds (JVM running for 3.267)
-11:01:19.098 [main] INFO  com.example.demo1210.Demo1210Application - ==============》启动完成：8011
-11:01:44.393 [http-nio-8011-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-11:01:44.427 [http-nio-8011-exec-1] INFO  com.example.demo1210.config.LogAop - =========================log start============================
-11:01:44.759 [http-nio-8011-exec-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-11:01:44.762 [http-nio-8011-exec-1] DEBUG com.example.demo1210.mapper.DeptMapper.selectById - ==>  Preparing: SELECT id,name,levels,user_name,tel,sort,descr,gmt_create,gmt_modified,is_deleted FROM tb_dept WHERE id=? AND is_deleted=0
-11:01:44.822 [http-nio-8011-exec-1] DEBUG com.example.demo1210.mapper.DeptMapper.selectById - ==> Parameters: 2(Integer)
-11:01:44.955 [http-nio-8011-exec-1] DEBUG com.example.demo1210.mapper.DeptMapper.selectById - <==      Total: 1
-11:01:44.958 [http-nio-8011-exec-1] INFO  com.example.demo1210.config.LogAop - title:根据
-11:01:44.958 [http-nio-8011-exec-1] INFO  com.example.demo1210.config.LogAop - tag:id
-11:01:44.959 [http-nio-8011-exec-1] INFO  com.example.demo1210.config.LogAop - 请求的方法是:com.example.demo1210.controller.DeptController.getOneById()
-11:01:44.980 [http-nio-8011-exec-1] INFO  com.example.demo1210.config.LogAop - 请求的参数是:2
-11:01:44.980 [http-nio-8011-exec-1] INFO  com.example.demo1210.config.LogAop - 请求的IP地址是:0:0:0:0:0:0:0:1
-11:01:44.981 [http-nio-8011-exec-1] INFO  com.example.demo1210.config.LogAop - 执行时间:530ms
-11:01:44.981 [http-nio-8011-exec-1] INFO  com.example.demo1210.config.LogAop - =========================log end============================
-11:01:44.981 [http-nio-8011-exec-1] INFO  com.example.demo1210.config.LogAop - =========================方法执行结束后运行============================
+14:40:47.224 [restartedMain] INFO  com.example.demo1210.Demo1210Application - Starting Demo1210Application on DESKTOP-HJ6UGVV with PID 1960 (D:\IdeaProjects\template\target\classes started by ztxue in D:\IdeaProjects\template)
+14:40:47.231 [restartedMain] INFO  com.example.demo1210.Demo1210Application - No active profile set, falling back to default profiles: default
+14:40:48.331 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8011"]
+14:40:48.332 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:40:48.333 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+14:40:48.400 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:40:49.863 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8011"]
+14:40:49.877 [restartedMain] INFO  com.example.demo1210.Demo1210Application - Started Demo1210Application in 2.921 seconds (JVM running for 3.763)
+14:40:49.878 [restartedMain] INFO  com.example.demo1210.Demo1210Application - ==============》启动完成：8011
+14:41:03.117 [http-nio-8011-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:41:25.629 [http-nio-8011-exec-5] INFO  com.example.demo1210.config.LogAop - =========================log start============================
+14:41:26.204 [http-nio-8011-exec-5] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+14:41:26.207 [http-nio-8011-exec-5] DEBUG com.example.demo1210.mapper.DeptMapper.selectPage_mpCount - ==>  Preparing: SELECT COUNT(*) AS total FROM tb_dept WHERE is_deleted = 0 AND (user_name LIKE ? AND name LIKE ? AND levels = ?)
+14:41:26.314 [http-nio-8011-exec-5] DEBUG com.example.demo1210.mapper.DeptMapper.selectPage_mpCount - ==> Parameters: %张童学%(String), %%(String), 0(Integer)
+14:41:26.350 [http-nio-8011-exec-5] DEBUG com.example.demo1210.mapper.DeptMapper.selectPage_mpCount - <==      Total: 1
+14:41:26.357 [http-nio-8011-exec-5] DEBUG com.example.demo1210.mapper.DeptMapper.selectPage - ==>  Preparing: SELECT id,name,levels,user_name,tel,sort,descr,gmt_create,gmt_modified,is_deleted FROM tb_dept WHERE is_deleted=0 AND (user_name LIKE ? AND name LIKE ? AND levels = ?) LIMIT ?
+14:41:26.359 [http-nio-8011-exec-5] DEBUG com.example.demo1210.mapper.DeptMapper.selectPage - ==> Parameters: %张童学%(String), %%(String), 0(Integer), 10(Long)
+14:41:26.363 [http-nio-8011-exec-5] DEBUG com.example.demo1210.mapper.DeptMapper.selectPage - <==      Total: 2
+14:41:26.364 [http-nio-8011-exec-5] INFO  com.example.demo1210.service.impl.DeptServiceImpl - 总页数1
+14:41:26.364 [http-nio-8011-exec-5] INFO  com.example.demo1210.service.impl.DeptServiceImpl - 每页个数10
+14:41:26.364 [http-nio-8011-exec-5] INFO  com.example.demo1210.service.impl.DeptServiceImpl - 当前页1
+14:41:26.365 [http-nio-8011-exec-5] INFO  com.example.demo1210.service.impl.DeptServiceImpl - iPage.getRecords()-->[com.example.demo1210.entity.Dept@181f198e, com.example.demo1210.entity.Dept@4eb62cf8]
+14:41:26.367 [http-nio-8011-exec-5] INFO  com.example.demo1210.config.LogAop - title:分页列表DIY
+14:41:26.367 [http-nio-8011-exec-5] INFO  com.example.demo1210.config.LogAop - tag:分页列表
+14:41:26.368 [http-nio-8011-exec-5] INFO  com.example.demo1210.config.LogAop - 请求的方法是:com.example.demo1210.controller.DeptController.selectListPage()
+14:41:26.452 [http-nio-8011-exec-5] INFO  com.example.demo1210.config.LogAop - 请求的参数是:{"currentPage":0,"levels":0,"name":"","pageSize":0,"tel":"string","userName":"张童学"}
+14:41:26.453 [http-nio-8011-exec-5] INFO  com.example.demo1210.config.LogAop - 请求的IP地址是:0:0:0:0:0:0:0:1
+14:41:26.454 [http-nio-8011-exec-5] INFO  com.example.demo1210.config.LogAop - 执行时间:736ms
+14:41:26.454 [http-nio-8011-exec-5] INFO  com.example.demo1210.config.LogAop - =========================log end============================
+14:41:26.454 [http-nio-8011-exec-5] INFO  com.example.demo1210.config.LogAop - =========================方法执行结束后运行============================
+14:43:12.185 [http-nio-8011-exec-8] INFO  com.example.demo1210.config.LogAop - =========================log start============================
+14:43:12.194 [http-nio-8011-exec-8] DEBUG com.example.demo1210.mapper.DeptMapper.selectPage_mpCount - ==>  Preparing: SELECT COUNT(*) AS total FROM tb_dept WHERE is_deleted = 0 AND (user_name LIKE ? AND name LIKE ? AND levels = ?)
+14:43:12.196 [http-nio-8011-exec-8] DEBUG com.example.demo1210.mapper.DeptMapper.selectPage_mpCount - ==> Parameters: %张童学%(String), %%(String), 10(Integer)
+14:43:12.197 [http-nio-8011-exec-8] DEBUG com.example.demo1210.mapper.DeptMapper.selectPage_mpCount - <==      Total: 1
+14:43:12.197 [http-nio-8011-exec-8] INFO  com.example.demo1210.service.impl.DeptServiceImpl - 总页数0
+14:43:12.197 [http-nio-8011-exec-8] INFO  com.example.demo1210.service.impl.DeptServiceImpl - 每页个数10
+14:43:12.197 [http-nio-8011-exec-8] INFO  com.example.demo1210.service.impl.DeptServiceImpl - 当前页1
+14:43:12.197 [http-nio-8011-exec-8] INFO  com.example.demo1210.service.impl.DeptServiceImpl - iPage.getRecords()-->[]
+14:43:12.197 [http-nio-8011-exec-8] INFO  com.example.demo1210.config.LogAop - title:分页列表DIY
+14:43:12.197 [http-nio-8011-exec-8] INFO  com.example.demo1210.config.LogAop - tag:分页列表
+14:43:12.197 [http-nio-8011-exec-8] INFO  com.example.demo1210.config.LogAop - 请求的方法是:com.example.demo1210.controller.DeptController.selectListPage()
+14:43:12.198 [http-nio-8011-exec-8] INFO  com.example.demo1210.config.LogAop - 请求的参数是:{"currentPage":10,"levels":10,"name":"","pageSize":0,"tel":"string","userName":"张童学"}
+14:43:12.198 [http-nio-8011-exec-8] INFO  com.example.demo1210.config.LogAop - 请求的IP地址是:0:0:0:0:0:0:0:1
+14:43:12.198 [http-nio-8011-exec-8] INFO  com.example.demo1210.config.LogAop - 执行时间:12ms
+14:43:12.199 [http-nio-8011-exec-8] INFO  com.example.demo1210.config.LogAop - =========================log end============================
+14:43:12.199 [http-nio-8011-exec-8] INFO  com.example.demo1210.config.LogAop - =========================方法执行结束后运行============================
+14:43:20.093 [http-nio-8011-exec-9] INFO  com.example.demo1210.config.LogAop - =========================log start============================
+14:43:20.097 [http-nio-8011-exec-9] DEBUG com.example.demo1210.mapper.DeptMapper.selectPage_mpCount - ==>  Preparing: SELECT COUNT(*) AS total FROM tb_dept WHERE is_deleted = 0 AND (user_name LIKE ? AND name LIKE ? AND levels = ?)
+14:43:20.097 [http-nio-8011-exec-9] DEBUG com.example.demo1210.mapper.DeptMapper.selectPage_mpCount - ==> Parameters: %张童学%(String), %%(String), 10(Integer)
+14:43:20.098 [http-nio-8011-exec-9] DEBUG com.example.demo1210.mapper.DeptMapper.selectPage_mpCount - <==      Total: 1
+14:43:20.098 [http-nio-8011-exec-9] INFO  com.example.demo1210.service.impl.DeptServiceImpl - 总页数0
+14:43:20.099 [http-nio-8011-exec-9] INFO  com.example.demo1210.service.impl.DeptServiceImpl - 每页个数10
+14:43:20.099 [http-nio-8011-exec-9] INFO  com.example.demo1210.service.impl.DeptServiceImpl - 当前页1
+14:43:20.099 [http-nio-8011-exec-9] INFO  com.example.demo1210.service.impl.DeptServiceImpl - iPage.getRecords()-->[]
+14:43:20.099 [http-nio-8011-exec-9] INFO  com.example.demo1210.config.LogAop - title:分页列表DIY
+14:43:20.099 [http-nio-8011-exec-9] INFO  com.example.demo1210.config.LogAop - tag:分页列表
+14:43:20.099 [http-nio-8011-exec-9] INFO  com.example.demo1210.config.LogAop - 请求的方法是:com.example.demo1210.controller.DeptController.selectListPage()
+14:43:20.099 [http-nio-8011-exec-9] INFO  com.example.demo1210.config.LogAop - 请求的参数是:{"currentPage":10,"levels":10,"name":"","pageSize":0,"tel":"string","userName":"张童学"}
+14:43:20.099 [http-nio-8011-exec-9] INFO  com.example.demo1210.config.LogAop - 请求的IP地址是:0:0:0:0:0:0:0:1
+14:43:20.099 [http-nio-8011-exec-9] INFO  com.example.demo1210.config.LogAop - 执行时间:6ms
+14:43:20.099 [http-nio-8011-exec-9] INFO  com.example.demo1210.config.LogAop - =========================log end============================
+14:43:20.099 [http-nio-8011-exec-9] INFO  com.example.demo1210.config.LogAop - =========================方法执行结束后运行============================
