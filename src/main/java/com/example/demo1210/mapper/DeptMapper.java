@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -28,7 +29,24 @@ public interface DeptMapper extends BaseMapper<Dept> {
             " is_deleted=0" +
             " </where>" +
             "</script>")
-    List<Dept> deptList();
+    List<Dept> deptList(@Param("deptBean") DeptBean deptBean);
+
+    @Select("<script>" +
+            "SELECT " +
+            " id,name,levels,user_name,tel" +
+            " FROM tb_dept" +
+            " <where>" +
+            " is_deleted=0" +
+            " <if test=\"user_name!=null and user_name!='' and user_name!='null'\">" +
+            " AND tb_dept.user_name like CONCAT('%',#{user_name,jdbcType=VARCHAR},'%')" +
+            " </if>" +
+            " <if test=\"name!=null and name!='' and name!='null'\">" +
+            " AND tb_dept.name like CONCAT('%',#{name,jdbcType=VARCHAR},'%')" +
+            " </if>" +
+            " </where>" +
+            " ORDER BY tb_dept.id DESC" +
+            "</script>")
+    List<Map<String, Object>> listP(Map<String, Object> map);
 
     @Select("<script>" +
             "SELECT " +

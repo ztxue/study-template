@@ -9,18 +9,18 @@ spring:
       password: 342800
       url: jdbc:mysql://localhost:3306/db_learning?characterEncoding=utf8&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
       driver-class-name: com.mysql.cj.jdbc.Driver
-      initial-size: 1            # \u521D\u59CB\u8FDE\u63A5\u6570
-      min-idle: 1                # \u6700\u5C0F\u7A7A\u95F2
-      max-active: 20             # \u6700\u5927\u8FDE\u63A5\u6570
-      max-wait: 60000            # \u6700\u957F\u7B49\u5F85\u65F6\u95F4
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      max-wait: 60000
       filters: stat,wall,log4j2
-      web-stat-filter: # \u914D\u7F6EStatFilter
-        enabled: true       #\u9ED8\u8BA4\u4E3Afalse\uFF0C\u8BBE\u7F6E\u4E3Atrue\u542F\u52A8
+      web-stat-filter:
+        enabled: true
         url-pattern: "/*"
-        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"           #\u6392\u9664\u4E00\u4E9B\u4E0D\u5FC5\u8981\u7684url
-      stat-view-servlet: #\u914D\u7F6EStatViewServlet
-        url-pattern: "/api/ext/druid/*"         #\u6839\u636E\u62E6\u622A\u65B9\u5F0F\u914D\u7F6E
-        allow: 127.0.0.1                        #\u5141\u8BB8\u90A3\u4E9Bip
+        exclusions: "*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*"
+      stat-view-servlet:
+        url-pattern: "/api/ext/druid/*"
+        allow: 127.0.0.1
         login-username: admin
         login-password: 123456
   aop:

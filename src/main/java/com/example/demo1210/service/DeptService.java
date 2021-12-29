@@ -1,12 +1,11 @@
 package com.example.demo1210.service;
 
 import com.example.demo1210.bean.DeptBean;
-import com.example.demo1210.config.LogAnnotation;
 import com.example.demo1210.entity.Dept;
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -19,7 +18,10 @@ import java.util.Set;
  */
 public interface DeptService extends IService<Dept> {
 
-    List<Dept> deptList();
+
+    Object listP(Map<String,Object> map);
+
+    List<Dept> deptList(DeptBean deptBean);
 
     int getOne(int id);
 
