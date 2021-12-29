@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-
 /**
  * <p>
  * 前端控制器
@@ -42,7 +40,7 @@ public class DeptController {
     @ApiOperation("分页列表DIY")
     @PostMapping("/selecLlistPage")
     public ResultResponseBody<List<Dept>> selectListPage(@RequestBody DeptBean params) {
-        if (params == null){
+        if (params == null) {
             ResultResponseBody.argsNull();
         }
         return ResultResponseBody.success(deptServiceimpl.selectListPage(params));
@@ -65,7 +63,7 @@ public class DeptController {
         System.out.println("请求参数：" + param);
 
         Object list = deptServiceimpl.listP(param);
-        System.out.println("list-->"+list);
+        System.out.println("list-->" + list);
 
         HashMap<Object, Object> map = new HashMap<>();
         map.put("code", 1);
@@ -83,12 +81,6 @@ public class DeptController {
         return ResultResponseBody.success(dept);
     }
 
-    @ApiOperation("Did")
-    @PostMapping("/Did")
-    public ResultResponseBody<Dept> selectCountByDId(@RequestParam(value = "ids") Set<Integer> ids) {
-        return ResultResponseBody.success(deptServiceimpl.selectCountByOrgId(ids));
-    }
-
     @ApiOperation("deleByName")
     @DeleteMapping("/dele")
     public ResultResponseBody<Integer> dele(@RequestParam(value = "dele") String name) {
@@ -98,7 +90,10 @@ public class DeptController {
 
     @ApiOperation("up")
     @PutMapping("/up")
-    public ResultResponseBody<Integer> upde(@RequestParam(value = "tel") String tel) {
+    public ResultResponseBody<Integer> upde(String tel) {
+        if (tel == null) {
+            return ResultResponseBody.argsNull();
+        }
         return ResultResponseBody.success(deptServiceimpl.updateTelByName(tel));
     }
 
@@ -106,8 +101,22 @@ public class DeptController {
     @ApiOperation("增加")
     @PostMapping("/add")
     public ResultResponseBody<Integer> add(@RequestBody DeptBean deptBean) {
+        if (deptBean == null) {
+            return ResultResponseBody.argsNull();
+        }
+
+        if (!deptBean.getUserName().isEmpty()) {
+            //查重
+            int check = deptServiceimpl.getOneByName(deptBean.getUserName());
+            if (check > 0) {
+                return ResultResponseBody.fail("已存在相同用户名");
+            }
+        } else {
+            return ResultResponseBody.argsNull();
+        }
 
         return ResultResponseBody.success(deptServiceimpl.addDept(deptBean));
     }
+
 
 }

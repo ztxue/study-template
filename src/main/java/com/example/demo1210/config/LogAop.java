@@ -25,6 +25,7 @@ public class LogAop {
     //    @Pointcut("execution(* com.example.demo1210.controller.*.*(..))")
     @Pointcut("@annotation(com.example.demo1210.config.LogAnnotation)")
     public void pt() {
+        // 没有为什么
     }
 
     //环绕通知
@@ -56,10 +57,6 @@ public class LogAop {
             String params = JSON.toJSONString(args[i]);
             log.info("请求的参数是:{}", params);
         }
-        //请求的IP地址
-        HttpServletRequest request = HttpServletUtils.getHttpServletRequest();
-        log.info("请求的IP地址是:{}", IpUtil.getIpAddr(request));
-
         log.info("执行时间:{}", time + "ms");
     }
 

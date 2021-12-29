@@ -14,6 +14,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.NotNull;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -113,11 +114,6 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements De
     }
 
     @Override
-    public Dept selectCountByOrgId(Set<Integer> ids) {
-        return deptMapper.selectCountByOrgId(ids);
-    }
-
-    @Override
     public int deleteByName(String name) {
         return deptMapper.deleteByName(name);
     }
@@ -131,4 +127,13 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements De
     public int addDept(DeptBean deptBean) {
         return deptMapper.addDept(deptBean);
     }
+
+    //查重用
+    @Override
+    public int getOneByName(String userName) {
+
+        return deptMapper.getOneByName(userName);
+    }
+
+
 }

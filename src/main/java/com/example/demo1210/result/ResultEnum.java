@@ -12,7 +12,7 @@ public enum ResultEnum {
     /**
      * 操作失败
      */
-    FAIL("000", "操作失败"),
+    FAIL("500", "操作失败"),
     /**
      * 参数解析失败
      */
@@ -48,12 +48,12 @@ public enum ResultEnum {
     /**
      * ID为空
      */
-    IDNULL("500", "ID为空"),
+    IDNULL("400", "ID为空"),
 
     /**
      * 空参
      */
-    ARGSNULL("500","空参");
+    ARGSNULL("400","空参");
 
 
 

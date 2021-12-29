@@ -107,4 +107,15 @@ public interface DeptMapper extends BaseMapper<Dept> {
             " (#{name},#{levels},#{userName},#{tel})" +
             " </script>")
     int addDept(DeptBean deptBean);
+
+    @Select("<script>" +
+            "SELECT " +
+            " count(*)" +
+            " FROM tb_dept" +
+            " <where>" +
+            " is_deleted=0 " +
+            " AND user_name=#{userName,jdbcType=VARCHAR}" +
+            " </where>" +
+            "</script>")
+    int getOneByName(@Param("userName") String userName);
 }
