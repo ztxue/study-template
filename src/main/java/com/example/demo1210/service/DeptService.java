@@ -26,7 +26,7 @@ public interface DeptService extends IService<Dept> {
 
     int getOne(int id);
 
-    int selectCountByOrgId(Set<Integer> ids);
+    Dept selectCountByOrgId(Set<Integer> ids);
 
     int deleteByName(String name);
 

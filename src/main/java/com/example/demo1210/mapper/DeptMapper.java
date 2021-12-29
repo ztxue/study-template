@@ -75,7 +75,7 @@ public interface DeptMapper extends BaseMapper<Dept> {
             " </foreach>" +
             "</where>" +
             "</script>")
-    int selectCountByOrgId(@Param("ids") Set<Integer> ids);
+    Dept selectCountByOrgId(@Param("ids") Set<Integer> ids);
 
     @Delete("<script>" +
             " delete" +

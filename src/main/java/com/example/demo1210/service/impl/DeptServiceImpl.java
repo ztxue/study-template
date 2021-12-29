@@ -46,10 +46,10 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements De
         }
         Integer pageSize = param.getPageSize();
         Integer currentPage = param.getCurrentPage();
-        if (pageSize == null) {
+        if (pageSize == null || pageSize == 0) {
             pageSize = 10;
         }
-        if (currentPage == null) {
+        if (currentPage == null || currentPage == 0) {
             currentPage = 1;
         }
         Page<Dept> page = new Page<>(currentPage, pageSize);
@@ -113,7 +113,7 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements De
     }
 
     @Override
-    public int selectCountByOrgId(Set<Integer> ids) {
+    public Dept selectCountByOrgId(Set<Integer> ids) {
         return deptMapper.selectCountByOrgId(ids);
     }
 

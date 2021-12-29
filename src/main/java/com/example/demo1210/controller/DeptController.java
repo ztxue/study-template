@@ -9,7 +9,6 @@ import com.example.demo1210.service.impl.DeptServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,9 +43,9 @@ public class DeptController {
     @PostMapping("/selecLlistPage")
     public ResultResponseBody<List<Dept>> selectListPage(@RequestBody DeptBean params) {
         if (params == null){
-            ResultResponseBody.fail(1,"空参");
+            ResultResponseBody.argsNull();
         }
-        return ResultResponseBody.ok(deptServiceimpl.selectListPage(params));
+        return ResultResponseBody.success(deptServiceimpl.selectListPage(params));
     }
 
 
@@ -55,7 +54,7 @@ public class DeptController {
     @PostMapping("/listPage")
     public ResultResponseBody<List<Dept>> getListPage(@RequestBody DeptBean deptBean) {
 
-        return ResultResponseBody.ok(deptServiceimpl.deptList(deptBean));
+        return ResultResponseBody.success(deptServiceimpl.deptList(deptBean));
     }
 
     @LogAnnotation(title = "列表map", tag = "列表map")
@@ -81,33 +80,34 @@ public class DeptController {
     @GetMapping("/id")
     public ResultResponseBody<Dept> getOneById(@RequestParam(value = "id") int id) {
         Dept dept = deptServiceimpl.getById(id);
-        return ResultResponseBody.ok(dept);
+        return ResultResponseBody.success(dept);
     }
 
     @ApiOperation("Did")
     @PostMapping("/Did")
     public ResultResponseBody<Dept> selectCountByDId(@RequestParam(value = "ids") Set<Integer> ids) {
-        return ResultResponseBody.ok(deptServiceimpl.selectCountByOrgId(ids));
+        return ResultResponseBody.success(deptServiceimpl.selectCountByOrgId(ids));
     }
 
     @ApiOperation("deleByName")
     @DeleteMapping("/dele")
-    public ResultResponseBody<Dept> dele(@RequestParam(value = "dele") String name) {
-        return ResultResponseBody.ok("删除ok", deptServiceimpl.deleteByName(name));
+    public ResultResponseBody<Integer> dele(@RequestParam(value = "dele") String name) {
+
+        return ResultResponseBody.success(deptServiceimpl.deleteByName(name));
     }
 
     @ApiOperation("up")
     @PutMapping("/up")
-    public ResultResponseBody<Dept> upde(@RequestParam(value = "tel") String tel) {
-        return ResultResponseBody.ok("ok", deptServiceimpl.updateTelByName(tel));
+    public ResultResponseBody<Integer> upde(@RequestParam(value = "tel") String tel) {
+        return ResultResponseBody.success(deptServiceimpl.updateTelByName(tel));
     }
 
     @LogAnnotation(title = "增加一个部门", tag = "增加")
     @ApiOperation("增加")
     @PostMapping("/add")
-    public ResultResponseBody<Dept> add(@RequestBody DeptBean deptBean) {
+    public ResultResponseBody<Integer> add(@RequestBody DeptBean deptBean) {
 
-        return ResultResponseBody.ok(deptServiceimpl.addDept(deptBean));
+        return ResultResponseBody.success(deptServiceimpl.addDept(deptBean));
     }
 
 }
