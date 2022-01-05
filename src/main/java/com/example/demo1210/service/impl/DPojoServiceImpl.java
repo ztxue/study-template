@@ -3,9 +3,11 @@ package com.example.demo1210.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.example.demo1210.bean.TreeNode;
 import com.example.demo1210.entity.DPojo;
 import com.example.demo1210.mapper.DPojoMapper;
 import com.example.demo1210.service.DPojoService;
+import com.example.demo1210.util.TreeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,14 @@ public class DPojoServiceImpl extends ServiceImpl<DPojoMapper, DPojo> implements
     @Autowired
     DPojoMapper mapper;
 
+    public List<TreeNode> getTree(){
+        List<TreeNode> treeNodes = mapper.selectSymptomTreeNodeJson();
+
+        return TreeUtil.build(treeNodes);
+    }
+
+
+    //生成树
     @Override
     public List<DPojo> getAllOneTwoSubject(int id) {
 
@@ -44,7 +54,6 @@ public class DPojoServiceImpl extends ServiceImpl<DPojoMapper, DPojo> implements
 
         return dPojosLinked;
     }
-
     //递归获取children节点
     private List<DPojo> getChild(Integer id, List<DPojo> pojos) {
         LinkedList<DPojo> dPojoLinkedList = new LinkedList<>();

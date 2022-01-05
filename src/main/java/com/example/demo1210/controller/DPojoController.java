@@ -1,5 +1,6 @@
 package com.example.demo1210.controller;
 
+import com.example.demo1210.bean.TreeNode;
 import com.example.demo1210.entity.DPojo;
 import com.example.demo1210.result.ResultResponseBody;
 import com.example.demo1210.service.impl.DPojoServiceImpl;
@@ -26,5 +27,10 @@ public class DPojoController {
     @GetMapping("/listTree")
     public ResultResponseBody<List<DPojo>> listResultResponseBody(int id){
         return ResultResponseBody.success(service.getAllOneTwoSubject(id));
+    }
+
+    @GetMapping("/listTree2")
+    public ResultResponseBody<List<TreeNode>> listResultResponseBody() {
+        return ResultResponseBody.success(service.getTree());
     }
 }
