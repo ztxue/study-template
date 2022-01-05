@@ -22,7 +22,7 @@ import java.lang.reflect.Method;
 @Slf4j
 public class LogAop {
 
-    //    @Pointcut("execution(* com.example.demo1210.controller.*.*(..))")
+    //    @Pointcut("execution(* com.example.com.controller.*.*(..))")
     @Pointcut("@annotation(com.example.demo1210.config.LogAnnotation)")
     public void pt() {
         // 没有为什么

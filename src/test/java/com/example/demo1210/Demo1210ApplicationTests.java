@@ -1,6 +1,6 @@
-//package com.example.demo1210;
+//package com.example.com;
 //
-//import com.example.demo1210.mapper.DeptMapper;
+//import com.example.com.mapper.DeptMapper;
 //import org.junit.jupiter.api.Test;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.boot.test.context.SpringBootTest;

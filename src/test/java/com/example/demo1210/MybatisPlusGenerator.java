@@ -1,4 +1,4 @@
-//package com.example.demo1210;
+//package com.example.com;
 //
 //import com.baomidou.mybatisplus.annotation.IdType;
 //import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -34,7 +34,7 @@
 //                })
 //                // 包配置 PackageConfig
 //                .packageConfig(builder -> {
-//                    builder.parent("com.example.demo1210")        // 设置父包名
+//                    builder.parent("com.example.com")        // 设置父包名
 ////                            .moduleName("Learning")     // 父包模块名，默认值:无
 //                            // 上面两行代码加起来:com.IT.blog.xxx(entity、service、controller等）
 //                            .entity("entity")       // Entity包名

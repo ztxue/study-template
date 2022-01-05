@@ -1,6 +1,7 @@
 package com.example.demo1210;
 
 import lombok.extern.slf4j.Slf4j;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
@@ -13,6 +14,7 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 @EnableOpenApi
 @Slf4j
 @SpringBootApplication
+@MapperScan("com.example.demo1210.mapper")
 public class Demo1210Application {
 
     public static void main(String[] args) {
