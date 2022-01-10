@@ -25,7 +25,7 @@ public class DPojoController {
     DPojoServiceImpl service;
 
     @GetMapping("/listTree")
-    public ResultResponseBody<List<DPojo>> listResultResponseBody(int id){
+    public ResultResponseBody<List<DPojo>> listResultResponseBody(Integer id){
         return ResultResponseBody.success(service.getAllOneTwoSubject(id));
     }
 
