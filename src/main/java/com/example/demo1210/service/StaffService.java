@@ -1,10 +1,11 @@
 package com.example.demo1210.service;
 
-import com.example.demo1210.entity.Dept;
-import com.example.demo1210.entity.Staff;
-import com.baomidou.mybatisplus.extension.service.IService;
 
-import java.util.List;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.demo1210.bean.StaffBean;
+import com.example.demo1210.entity.Staff;
+import org.apache.ibatis.annotations.Param;
+
 
 /**
  * <p>
@@ -15,6 +16,17 @@ import java.util.List;
  * @since 2021-12-10
  */
 public interface StaffService extends IService<Staff> {
-
+    /**
+     * add
+     */
+    int addStaff(Staff staff);
+    /**
+     * 用作查重
+     */
+    int getOneByName(String userName);
+    /**
+     * login
+     */
+    StaffBean login(@Param("userName") String loginName, @Param("password") String loginPassword);
 
 }

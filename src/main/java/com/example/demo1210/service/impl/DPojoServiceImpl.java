@@ -25,16 +25,16 @@ public class DPojoServiceImpl extends ServiceImpl<DPojoMapper, DPojo> implements
     @Autowired
     DPojoMapper mapper;
 
-    public List<TreeNode> getTree(){
+    //工具类树
+    public List<TreeNode> getTree() {
         List<TreeNode> treeNodes = mapper.selectSymptomTreeNodeJson();
-
         return TreeUtil.build(treeNodes);
     }
 
 
     //生成树
     @Override
-    public List<DPojo> getAllOneTwoSubject(int id) {
+    public List<DPojo> getAllOneTwoSubject() {
 
         List<DPojo> pojos = mapper.selectList(new QueryWrapper<DPojo>()
                 .select("name", "id", "parent_id")
@@ -54,6 +54,7 @@ public class DPojoServiceImpl extends ServiceImpl<DPojoMapper, DPojo> implements
 
         return dPojosLinked;
     }
+
     //递归获取children节点
     private List<DPojo> getChild(Integer id, List<DPojo> pojos) {
         LinkedList<DPojo> dPojoLinkedList = new LinkedList<>();

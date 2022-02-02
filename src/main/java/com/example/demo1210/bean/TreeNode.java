@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,8 +12,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TreeNode {
-    private Integer id;
+
+    private BigInteger id;
     private String title;
-    private Integer parentId; 
+    private BigInteger parentId;
     private List<TreeNode> children = new ArrayList<>();
 }

@@ -2,6 +2,7 @@ package com.example.demo1210.util;
 
 import com.example.demo1210.bean.TreeNode;
 
+import java.math.BigInteger;
 import java.util.*;
 
 
@@ -16,7 +17,7 @@ public class TreeUtil {
     public static <T extends TreeNode> List<T> build(List<T> treeNodes) {
         List<T> result = new LinkedList<>();
         //list转map
-        Map<Integer, T> nodeMap = new LinkedHashMap<>(treeNodes.size());
+        Map<BigInteger, T> nodeMap = new LinkedHashMap<>(treeNodes.size());
         for (T treeNode : treeNodes) {
             nodeMap.put(treeNode.getId(), treeNode);
         }
@@ -26,7 +27,6 @@ public class TreeUtil {
                 parent.getChildren().add(node);
                 continue;
             }
-
             result.add(node);
         }
         return result;

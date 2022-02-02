@@ -18,11 +18,10 @@ import java.util.Map;
  */
 public interface DeptService extends IService<Dept> {
 
+
     List<Dept> selectListPage(DeptBean param);
 
     Object listP(Map<String, Object> map);
-
-    List<Dept> deptList(DeptBean deptBean);
 
     int getOne(int id);
 

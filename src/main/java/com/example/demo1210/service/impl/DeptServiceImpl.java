@@ -36,6 +36,11 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements De
     @Autowired
     DeptMapper deptMapper;
 
+
+    public List<Dept> listNoParams() {
+        return baseMapper.selectList(new QueryWrapper<>());
+    }
+
     /**
      * listPage 自定义的方法
      */
@@ -81,32 +86,6 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements De
         return resultMap;
     }
 
-    //list分页QueryWrapper
-    @Override
-    public List<Dept> deptList(DeptBean deptBean) {
-
-        QueryWrapper<Dept> wrapper = new QueryWrapper<>();
-        if (StringUtils.isNotEmpty(deptBean.getUserName())) {
-            wrapper.like("user_name", deptBean.getUserName());
-        }
-        if (StringUtils.isNotEmpty(deptBean.getUserName())) {
-            wrapper.like("name", deptBean.getName());
-        }
-        if (StringUtils.isNotEmpty(deptBean.getUserName())) {
-            wrapper.eq("levels", deptBean.getLevels());
-        }
-
-        Page<Dept> page = new Page<>(1, 10);
-        IPage<Dept> iPage = deptMapper.selectPage(page, wrapper);
-
-        log.info("总页数" + iPage.getPages());
-        log.info("每页个数" + iPage.getSize());
-        log.info("当前页" + iPage.getCurrent());
-
-        List<Dept> records = iPage.getRecords();
-        log.info("iPage.getRecords()-->" + records);
-        return records;
-    }
 
     @Override
     public int getOne(int id) {

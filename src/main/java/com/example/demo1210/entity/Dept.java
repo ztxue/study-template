@@ -1,5 +1,6 @@
 package com.example.demo1210.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -11,10 +12,16 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.ibatis.type.JdbcType;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author 张童学
@@ -37,7 +44,6 @@ public class Dept implements Serializable {
     private String name;
 
     @ApiModelProperty("等级")
-    @TableField("levels")
     private Integer levels;
 
     @ApiModelProperty("联系人")
@@ -56,13 +62,15 @@ public class Dept implements Serializable {
     @TableField("descr")
     private String descr;
 
-    @ApiModelProperty("创建时间")
-    @TableField("gmt_create")
-    private Date gmtCreate;
+    @TableField(value = "`gmt_create`", jdbcType = JdbcType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private String gmtCreate;
 
-    @ApiModelProperty("修改时间")
-    @TableField("gmt_modified")
-    private Date gmtModified;
+    @TableField(value = "`gmt_modified`", jdbcType = JdbcType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    private String gmtModified;
 
     @ApiModelProperty("逻辑删除,0存在,1删除")
     @TableField("is_deleted")

@@ -4,7 +4,7 @@ package com.example.demo1210.controller;
 import com.example.demo1210.bean.DeptBean;
 import com.example.demo1210.config.LogAnnotation;
 import com.example.demo1210.entity.Dept;
-import com.example.demo1210.result.ResultResponseBody;
+import com.example.demo1210.result.R;
 import com.example.demo1210.service.impl.DeptServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 /**
  * <p>
  * 前端控制器
@@ -26,6 +27,7 @@ import java.util.Map;
 @SuppressWarnings("all")
 @Slf4j
 @Api
+@CrossOrigin
 @RestController
 @RequestMapping("/dept")
 public class DeptController {
@@ -36,23 +38,23 @@ public class DeptController {
         this.deptServiceimpl = deptServiceimpl;
     }
 
+
     @LogAnnotation(title = "分页列表DIY", tag = "分页列表")
     @ApiOperation("分页列表DIY")
-    @PostMapping("/selecLlistPage")
-    public ResultResponseBody<List<Dept>> selectListPage(@RequestBody DeptBean params) {
+    @PostMapping("/selecListPage")
+    public R<List<Dept>> selectListPage(@RequestBody DeptBean params) {
         if (params == null) {
-            ResultResponseBody.argsNull();
+            R.argsNull();
         }
-        return ResultResponseBody.success(deptServiceimpl.selectListPage(params));
+        return R.success(deptServiceimpl.selectListPage(params));
     }
 
+    @CrossOrigin
+    @LogAnnotation(title = "列表", tag = "列表")
+    @GetMapping("/listNo")
+    public R<List<Dept>> getList() {
 
-    @LogAnnotation(title = "分页列表", tag = "分页列表")
-    @ApiOperation("分页列表")
-    @PostMapping("/listPage")
-    public ResultResponseBody<List<Dept>> getListPage(@RequestBody DeptBean deptBean) {
-
-        return ResultResponseBody.success(deptServiceimpl.deptList(deptBean));
+        return R.success(deptServiceimpl.listNoParams());
     }
 
     @LogAnnotation(title = "列表map", tag = "列表map")
@@ -76,46 +78,46 @@ public class DeptController {
     @LogAnnotation(title = "根据", tag = "id")
     @ApiOperation("id")
     @GetMapping("/id")
-    public ResultResponseBody<Dept> getOneById(@RequestParam(value = "id") int id) {
+    public R<Dept> getOneById(@RequestParam(value = "id") int id) {
         Dept dept = deptServiceimpl.getById(id);
-        return ResultResponseBody.success(dept);
+        return R.success(dept);
     }
 
     @ApiOperation("deleByName")
     @DeleteMapping("/dele")
-    public ResultResponseBody<Integer> dele(@RequestParam(value = "dele") String name) {
+    public R<Integer> dele(@RequestParam(value = "dele") String name) {
 
-        return ResultResponseBody.success(deptServiceimpl.deleteByName(name));
+        return R.success(deptServiceimpl.deleteByName(name));
     }
 
     @ApiOperation("up")
     @PutMapping("/up")
-    public ResultResponseBody<Integer> upde(String tel) {
+    public R<Integer> upde(String tel) {
         if (tel == null) {
-            return ResultResponseBody.argsNull();
+            return R.argsNull();
         }
-        return ResultResponseBody.success(deptServiceimpl.updateTelByName(tel));
+        return R.success(deptServiceimpl.updateTelByName(tel));
     }
 
     @LogAnnotation(title = "增加一个部门", tag = "增加")
     @ApiOperation("增加")
     @PostMapping("/add")
-    public ResultResponseBody<Integer> add(@RequestBody DeptBean deptBean) {
+    public R<Integer> add(@RequestBody DeptBean deptBean) {
         if (deptBean == null) {
-            return ResultResponseBody.argsNull();
+            return R.argsNull();
         }
 
         if (!deptBean.getUserName().isEmpty()) {
             //查重
             int check = deptServiceimpl.getOneByName(deptBean.getUserName());
             if (check > 0) {
-                return ResultResponseBody.fail("已存在相同用户名");
+                return R.fail("已存在相同用户名");
             }
         } else {
-            return ResultResponseBody.argsNull();
+            return R.argsNull();
         }
 
-        return ResultResponseBody.success(deptServiceimpl.addDept(deptBean));
+        return R.success(deptServiceimpl.addDept(deptBean));
     }
 
 

@@ -13,5 +13,5 @@ import java.util.List;
  */
 public interface DPojoService extends IService<DPojo> {
 
-    List<DPojo> getAllOneTwoSubject(int id);
+    List<DPojo> getAllOneTwoSubject();
 }

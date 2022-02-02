@@ -1,10 +1,10 @@
 package com.example.demo1210.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.demo1210.bean.DeptBean;
 import com.example.demo1210.entity.Dept;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -22,6 +22,37 @@ import java.util.Set;
 public interface DeptMapper extends BaseMapper<Dept> {
 
 
+    /**
+     * 根据deptName获取levels
+     */
+    @Select("<script>" +
+            "SELECT" +
+            " levels" +
+            " FROM" +
+            " tb_dept d" +
+            " <where>" +
+            " name = #{deptName,jdbcType=VARCHAR}" +
+            " </where>" +
+            " Limit 1" +
+            "</script>")
+    Integer getLevelsByDeptName(String deptName);
+
+    /**
+     * 根据部门名称获取部门id
+     */
+    @Select("<script>" +
+            "SELECT " +
+            " id" +
+            " FROM tb_dept" +
+            " <where>" +
+            " name=#{deptName,jdbcType=VARCHAR}" +
+            " </where>" +
+            "</script>")
+    Integer getDeptIdByName(String deptName);
+
+    /**
+     * list
+     */
     @Select("<script>" +
             "SELECT " +
             " id,name,levels,user_name,tel" +
@@ -37,7 +68,7 @@ public interface DeptMapper extends BaseMapper<Dept> {
      */
     @Select("<script>" +
             "SELECT " +
-            " id,name,levels,user_name,tel" +
+            " id,name,levels,user_name,tel,descr,gmt_create,gmt_modified" +
             " FROM tb_dept" +
             " <where>" +
             " is_deleted=0" +
@@ -99,6 +130,9 @@ public interface DeptMapper extends BaseMapper<Dept> {
             " </script>")
     int updateTelByName(@Param("tel") String tel);
 
+    /**
+     * 添加
+     */
     @Insert("<script>" +
             " insert into " +
             " tb_dept" +
@@ -108,6 +142,9 @@ public interface DeptMapper extends BaseMapper<Dept> {
             " </script>")
     int addDept(DeptBean deptBean);
 
+    /**
+     * 查重
+     */
     @Select("<script>" +
             "SELECT " +
             " count(*)" +
