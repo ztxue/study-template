@@ -14,7 +14,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 
 /**
- * 序列化，防止redistemplate储存数据乱码
+ * 序列化，防止redistemplate-study储存数据乱码
  */
 @SuppressWarnings("all")
 @Configuration

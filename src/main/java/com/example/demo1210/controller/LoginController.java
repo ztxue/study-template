@@ -7,12 +7,15 @@ import com.example.demo1210.entity.Staff;
 import com.example.demo1210.result.R;
 import com.example.demo1210.service.impl.StaffServiceImpl;
 import com.example.demo1210.util.AesUtil;
+import com.example.demo1210.util.JwtUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author 张童学
@@ -56,26 +59,14 @@ public class LoginController {
         if (loginBean == null || loginBean.getUserId() == null) {
             return R.fail("用户不存在或密码错误!");
         }
-//
-//        Map<String, Object> map = new HashMap<>();
-//        Map<String, Object> resuleMap = new HashMap<>();
-//        //生成token
-//        map.put("userInfo", loginBean.getUserName());
-//        String token = JwtUtil.sign(map);
-//
-//        if (token != null) {
-//            //token存入redis
-//            long timeOut = 30 * 60L;
-//            redisTemplate.opsForValue().set("token", token, timeOut, TimeUnit.SECONDS);
-//            redisTemplate.opsForValue().set("loginInfo", loginBean, timeOut, TimeUnit.SECONDS);
-////            redisTemplate.expire("token", 1, TimeUnit.DAYS);
-//
-//            resuleMap.put("loginInfo", loginBean);
-//            resuleMap.put("token", token);
-//            return R.success(resuleMap);
-//        }
-//        return R.fail("获取token失败");
-        return R.success(loginBean);
+
+        Map<String, Object> map = new HashMap<>();
+        //生成token
+        map.put("userInfo", loginBean.getUserName());
+        String token = JwtUtil.sign(map);
+
+
+        return R.success(token);
 
     }
 

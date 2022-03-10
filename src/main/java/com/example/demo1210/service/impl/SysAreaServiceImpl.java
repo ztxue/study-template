@@ -60,7 +60,7 @@ public class SysAreaServiceImpl extends ServiceImpl<SysAreaMapper, SysArea> impl
             pageSize = 20;
         }
         Page<SysArea> page = new Page<>(currentPage, pageSize);
-        IPage<SysArea> iPage = sysAreaMapper.selectListByParams(params, page);
+        IPage<SysArea> iPage = sysAreaMapper.selectExpressionList(params, page);
         ResultList<SysArea> resultList = new ResultList<>();
         resultList.setList(iPage.getRecords());
         PageBean pageBean = new PageBean();

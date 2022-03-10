@@ -72,7 +72,7 @@
 //                            .formatMapperFileName("%sMapper") // 格式化 mapper 文件名称
 //                            .formatXmlFileName("%sMapper");   // 格式化 xml 实现类文件名称
 //                })
-//                .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
+//                .template-studyEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
 //                .execute();
 //    }
 //

@@ -29,17 +29,26 @@ public class R<T> {
      */
     @JSONField(ordinal = 30)
     private T data;
+
     /**
      * 成功不返回数据
      */
     public static <T> R<T> success() {
-        return new R<>(ResultEnum.SUCCESS200.getCode(), ResultEnum.SUCCESS200.getDesc(),null);
+        return new R<>(ResultEnum.SUCCESS200.getCode(), ResultEnum.SUCCESS200.getDesc(), null);
     }
+
     /**
      * 成功
      */
     public static <T> R<T> success(T data) {
         return new R<>(ResultEnum.SUCCESS200.getCode(), ResultEnum.SUCCESS200.getDesc(), data);
+    }
+
+    /**
+     * 成功-自定义返回语句
+     */
+    public static <T> R<T> success(String msg) {
+        return new R<>(ResultEnum.SUCCESS200.getCode(), msg, null);
     }
 
     /**
@@ -50,7 +59,14 @@ public class R<T> {
     }
 
     /**
-     * 失败自定义信息
+     * 失败返回数据
+     */
+    public static <T> R<T> fail(T data) {
+        return new R<>(ResultEnum.FAIL.getCode(), ResultEnum.FAIL.getDesc(), data);
+    }
+
+    /**
+     * 失败返回自定义信息
      */
     public static <T> R<T> fail(String msg) {
         return new R<>(ResultEnum.FAIL.getCode(), msg, null);

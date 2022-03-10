@@ -35,7 +35,7 @@ public interface SysAreaMapper extends BaseMapper<SysArea> {
             "</where>" +
             " ORDER BY t.id DESC" +
             "</script>")
-    IPage<SysArea> selectListByParams(@Param("params") SysAreaParams params, @Param("page") Page<SysArea> page);
+    IPage<SysArea> selectExpressionList(@Param("params") SysAreaParams params, @Param("page") Page<SysArea> page);
 
     @Select("<script>" +
             " Select" +

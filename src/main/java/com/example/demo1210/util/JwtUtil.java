@@ -117,7 +117,6 @@ public class JwtUtil {
             final Date expiration = getExpiresAt(token);
             return expiration.before(new Date());
         } catch (TokenExpiredException e) {
-            // e.printStackTrace();
             return true;
         }
 

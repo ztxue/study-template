@@ -39,6 +39,20 @@ public class DeptController {
     }
 
 
+//    /**
+//     * 导出 Excel 表格
+//     * @return
+//     */
+//    @GetMapping("/export")
+//    public R<byte[]> exportData() {
+//        // 1.这一步就是查询你要导出的数据
+//        List<Dept> list = deptServiceimpl.list();
+//        // 2.创建一个 POIUtils 工具类进行导出操作
+//        return POIUtils.employee2Excel(list);
+//    }
+
+
+
     @LogAnnotation(title = "分页列表DIY", tag = "分页列表")
     @ApiOperation("分页列表DIY")
     @PostMapping("/selecListPage")
