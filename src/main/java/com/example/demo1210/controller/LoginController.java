@@ -5,7 +5,7 @@ import com.example.demo1210.bean.LoginBean;
 import com.example.demo1210.bean.StaffBean;
 import com.example.demo1210.entity.Staff;
 import com.example.demo1210.result.R;
-import com.example.demo1210.service.impl.StaffServiceImpl;
+import com.example.demo1210.service.StaffService;
 import com.example.demo1210.util.AesUtil;
 import com.example.demo1210.util.JwtUtil;
 import org.apache.commons.lang3.StringUtils;
@@ -34,7 +34,7 @@ public class LoginController {
     private static final String SECRET_KEY = "ZTXSTUDY666";
 
     @Autowired
-    StaffServiceImpl staffService;
+    StaffService staffService;
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
