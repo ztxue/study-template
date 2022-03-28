@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    #开发
+    active: dev
+    #正式
+#    active: linux
