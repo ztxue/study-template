@@ -25,15 +25,21 @@ public class SysUserInfo extends Model<SysUserInfo> implements Serializable {
     /**
      * id
      */
-    @JSONField(ordinal = 0)
+    @JSONField()
     @TableId(value = "`id`", type = IdType.AUTO)
     private Integer id;
     /**
      * 用户名
      */
     @JSONField(ordinal = 10)
-    @TableField(value = "`username`", jdbcType = JdbcType.VARCHAR)
-    private String username;
+    @TableField(value = "`user_name`", jdbcType = JdbcType.VARCHAR)
+    private String userName;
+    /**
+     * 笔名
+     */
+    @JSONField(ordinal = 130)
+    @TableField(value = "`nick_name`", jdbcType = JdbcType.VARCHAR)
+    private String nickName;
     /**
      * 密码
      */

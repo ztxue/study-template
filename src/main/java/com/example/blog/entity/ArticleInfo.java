@@ -46,6 +46,10 @@ public class ArticleInfo extends Model<ArticleInfo> implements Serializable {
     @JSONField(ordinal = 30)
     @TableField(value = "`title`", jdbcType = JdbcType.VARCHAR)
     private String title;
+
+    @JSONField(ordinal = 110)
+    @TableField(value = "`nick_name`", jdbcType = JdbcType.VARCHAR)
+    private String nickName;
     /**
      * 封面图
      */

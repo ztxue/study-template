@@ -13,7 +13,7 @@ public interface IArticleInfoService extends IService<ArticleInfo> {
     /**
      * 查询列表
      */
-    ResultList<ArticleInfo> list(ArticleInfoParams params);
+    ResultList<ArticleInfoParams> list(ArticleInfoParams params);
     /**
      * 添加
      */

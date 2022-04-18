@@ -34,12 +34,12 @@ public class ArticleInfoController {
      * 查询列表
      */
     @PostMapping(value = "list", produces = MediaType.APPLICATION_JSON_VALUE)
-    public R<ResultList<ArticleInfo>> list(@RequestBody ArticleInfoParams params) {
+    public R<ResultList<ArticleInfoParams>> list(@RequestBody ArticleInfoParams params) {
         if (params == null) {
             return R.fail400();
         }
-        ResultList<ArticleInfo> list = articleInfoServiceImpl.list(params);
-        return R.success(list);
+        ResultList<ArticleInfoParams> list = articleInfoServiceImpl.list(params);
+        return list.getList().isEmpty() ? R.fail() : R.success(list);
     }
 
     /**

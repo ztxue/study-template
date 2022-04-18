@@ -32,8 +32,8 @@ public class SysLog extends Model<SysLog> implements Serializable {
      * 用户名
      */
     @JSONField(ordinal = 10)
-    @TableField(value = "`username`", jdbcType = JdbcType.VARCHAR)
-    private String username;
+    @TableField(value = "`user_name`", jdbcType = JdbcType.VARCHAR)
+    private String userName;
     /**
      * 请求方式
      */

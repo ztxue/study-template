@@ -8,7 +8,6 @@ import com.example.blog.entity.SysUserInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
 /**
  * @author: 张童学
  * @description: 用户表 Mapper
@@ -22,7 +21,8 @@ public interface SysUserInfoMapper extends BaseMapper<SysUserInfo> {
     @Select("<script>" +
             "SELECT" +
             " t.`id`" +
-            " ,t.`username`" +
+            " ,t.`nick_name`" +
+            " ,t.`user_name`" +
             " ,t.`password`" +
             " ,t.`phone`" +
             " ,t.`email`" +
@@ -32,7 +32,7 @@ public interface SysUserInfoMapper extends BaseMapper<SysUserInfo> {
             " ,t.`address`" +
             " ,t.`position`" +
             " ,t.`create_time`" +
-            " ,t.`last_login_time`" +
+            " ,t.`last_online_time`" +
             " ,t.`is_enabled`" +
             " FROM sys_user_info t " +
             "<where>" +
@@ -48,7 +48,7 @@ public interface SysUserInfoMapper extends BaseMapper<SysUserInfo> {
             " sys_user_info u" +
             "<where>" +
             "<if test=\"params.loginName!='' and params.loginName!='null' and params.loginName!=null\">" +
-            " u.`username` = #{params.loginName,jdbcType=VARCHAR} " +
+            " u.`user_name` = #{params.loginName,jdbcType=VARCHAR} " +
             "</if>" +
             "<if test=\"params.loginEmail!='' and params.loginEmail!='null' and params.loginEmail!=null\">" +
             " AND u.`email` = #{params.loginEmail,jdbcType=VARCHAR} " +

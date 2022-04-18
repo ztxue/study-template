@@ -74,7 +74,7 @@ public class LoginController {
      */
     @PostMapping("regis")
     public R<Integer> staffRegister(@RequestBody SysUserInfoParams params) {
-        if (!StringUtils.isBlank(params.getUsername())) {
+        if (!StringUtils.isBlank(params.getUserName())) {
             if (StringUtils.isBlank(params.getPassword())) {
                 return R.fail("请输入密码!");
             }

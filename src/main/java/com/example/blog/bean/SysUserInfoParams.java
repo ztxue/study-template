@@ -1,11 +1,5 @@
 package com.example.blog.bean;
-import com.alibaba.fastjson.annotation.JSONField;
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
-import org.apache.ibatis.type.JdbcType;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -25,7 +19,7 @@ public class SysUserInfoParams {
     /**
      * 用户名
      */
-    private String username;
+    private String userName;
     /**
      * 密码
      */

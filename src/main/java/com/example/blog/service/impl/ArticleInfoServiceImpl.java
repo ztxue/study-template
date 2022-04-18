@@ -1,11 +1,8 @@
 package com.example.blog.service.impl;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.blog.result.ResultEnum;
 import com.example.blog.result.ResultList;
 import com.example.blog.result.HttpRuntimeException;
-import com.example.blog.result.PageBean;
 import com.example.blog.bean.ArticleInfoParams;
 import com.example.blog.entity.ArticleInfo;
 import com.example.blog.mapper.ArticleInfoMapper;
@@ -14,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 /**
  * @author: 张童学
@@ -32,28 +30,13 @@ public class ArticleInfoServiceImpl extends ServiceImpl<ArticleInfoMapper, Artic
      * 查询列表
      */
     @Override
-    public ResultList<ArticleInfo> list(ArticleInfoParams params) {
+    public ResultList<ArticleInfoParams> list(ArticleInfoParams params) {
         if (params == null) {
                 params = new ArticleInfoParams();
         }
-        Integer currentPage = params.getCurrentPage();
-        Integer pageSize = params.getPageSize();
-        if (currentPage == null) {
-            currentPage = 1;
-        }
-        if (pageSize == null) {
-            pageSize = 20;
-        }
-        Page<ArticleInfo> page = new Page<>(currentPage, pageSize);
-        IPage<ArticleInfo> iPage = articleInfoMapper.selectListByParams(params, page);
-        ResultList<ArticleInfo> resultList = new ResultList<>();
-        resultList.setList(iPage.getRecords());
-        PageBean pageBean = new PageBean();
-        pageBean.setCurrentPage(iPage.getCurrent());
-        pageBean.setPageSize(iPage.getSize());
-        pageBean.setAllRows(iPage.getTotal());
-        pageBean.setAllPages(iPage.getPages());
-        resultList.setPage(pageBean);
+        List<ArticleInfoParams> list = articleInfoMapper.selectListByParams(params);
+        ResultList<ArticleInfoParams> resultList = new ResultList<>();
+        resultList.setList(list);
         return resultList;
     }
     /**

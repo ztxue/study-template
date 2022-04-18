@@ -32,8 +32,8 @@ public class SysVisitorInfo extends Model<SysVisitorInfo> implements Serializabl
      * 昵称
      */
     @JSONField(ordinal = 10)
-    @TableField(value = "`nickname`", jdbcType = JdbcType.VARCHAR)
-    private String nickname;
+    @TableField(value = "`nick_name`", jdbcType = JdbcType.VARCHAR)
+    private String nickName;
     /**
      * 游客头像
      */

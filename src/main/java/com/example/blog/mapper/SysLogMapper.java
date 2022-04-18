@@ -7,7 +7,6 @@ import com.example.blog.entity.SysLog;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
 /**
  * @author: 张童学
  * @description: 登录log表 Mapper
@@ -21,7 +20,7 @@ public interface SysLogMapper extends BaseMapper<SysLog> {
     @Select("<script>" +
             "SELECT" +
             " t.`id`" +
-            " ,t.`username`" +
+            " ,t.`user_name`" +
             " ,t.`method`" +
             " ,t.`address`" +
             " ,t.`position`" +

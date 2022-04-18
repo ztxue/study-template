@@ -7,7 +7,6 @@ import com.example.blog.entity.SysVisitorInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
 /**
  * @author: 张童学
  * @description: 游客表 Mapper
@@ -21,7 +20,7 @@ public interface SysVisitorInfoMapper extends BaseMapper<SysVisitorInfo> {
     @Select("<script>" +
             "SELECT" +
             " t.`id`" +
-            " ,t.`nickname`" +
+            " ,t.`nick_name`" +
             " ,t.`avatar`" +
             " ,t.`address`" +
             " ,t.`position`" +

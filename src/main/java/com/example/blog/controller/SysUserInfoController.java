@@ -82,7 +82,7 @@ public class SysUserInfoController {
             return R.fail500();
         }
         SysUserInfo entity = sysUserInfoServiceImpl.show(id);
-        return R.success(entity);
+        return entity == null ? R.fail() : R.success(entity);
     }
 
     /**

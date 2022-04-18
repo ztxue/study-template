@@ -96,7 +96,11 @@ public class SysUserInfoServiceImpl extends ServiceImpl<SysUserInfoMapper, SysUs
         if (id == null) {
             throw new HttpRuntimeException(ResultEnum.IDNULL.getCode(), ResultEnum.IDNULL.getDesc());
         }
-        return sysUserInfoMapper.selectById(id);
+        return sysUserInfoMapper.selectOne(new QueryWrapper<SysUserInfo>()
+                .select("*")
+                .eq("id", id)
+                .eq("is_enabled", 0)
+        );
     }
 
     /**
@@ -120,7 +124,7 @@ public class SysUserInfoServiceImpl extends ServiceImpl<SysUserInfoMapper, SysUs
         //账号封禁否
         Long enable = sysUserInfoMapper.selectCount(new QueryWrapper<SysUserInfo>()
                 .select("id")
-                .eq(bean.getLoginName() != null, "username", bean.getLoginName())
+                .eq(bean.getLoginName() != null, "user_name", bean.getLoginName())
                 .eq(bean.getLoginPhone() != null, "phone", bean.getLoginPhone())
                 .eq(bean.getLoginEmail() != null, "email", bean.getLoginEmail())
                 .eq("is_enabled", 1));
@@ -130,7 +134,7 @@ public class SysUserInfoServiceImpl extends ServiceImpl<SysUserInfoMapper, SysUs
         //账号存在否
         Long count = sysUserInfoMapper.selectCount(new QueryWrapper<SysUserInfo>()
                 .select("id")
-                .eq(bean.getLoginName() != null, "username", bean.getLoginName())
+                .eq(bean.getLoginName() != null, "user_name", bean.getLoginName())
                 .eq(bean.getLoginPhone() != null, "phone", bean.getLoginPhone())
                 .eq(bean.getLoginEmail() != null, "email", bean.getLoginEmail())
                 .eq("is_enabled", 0));
@@ -143,7 +147,7 @@ public class SysUserInfoServiceImpl extends ServiceImpl<SysUserInfoMapper, SysUs
     @Override
     public int add(SysUserInfoParams params) {
         SysUserInfo pojo = new SysUserInfo();
-        pojo.setUsername(params.getUsername());
+        pojo.setUserName(params.getUserName());
         pojo.setPassword(AesUtil.encrypt(params.getPassword(), SECRET_KEY));
         pojo.setPhone(params.getPhone());
         pojo.setEmail(params.getEmail());
